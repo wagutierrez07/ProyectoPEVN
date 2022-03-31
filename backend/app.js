@@ -18,9 +18,7 @@ app.use(history());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes
-app.get('/', (req, res)=>{
-    res.send('primera pagina');
-})
+app.use('/', require('./routes/auth.routes'));
 
 //Settings
 app.set('port', process.env.PORT || 4000)
